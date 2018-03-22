@@ -1,3 +1,5 @@
+/*@reference https://javatutorial.net/jframe-buttons-listeners-text-fields*/
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -28,7 +30,15 @@ public class Login {
 		
 		JTextField pwdtext= new JTextField();
 		pwdtext.setBounds(110, 100, 130, 30);
-					
+									
+		button.addActionListener(new ActionListener() {
+	        @Override
+	        public void actionPerformed(ActionEvent arg) 
+		{
+			// perform login operation				
+		}          
+	      });
+		
 		f.add(blank);
 		f.add(textfield);
 		f.add(label);
@@ -37,17 +47,7 @@ public class Login {
 		f.add(pwdtext);
 		f.setSize(1000,1000);    
 		f.setLayout(null);    
-		f.setVisible(true);    
-		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-						
-		button.addActionListener(new ActionListener() {
-	        
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-					label1.setText("Login complete");				
-			}          
-	      });
+		f.setVisible(true);
 		}         
 	
 	
