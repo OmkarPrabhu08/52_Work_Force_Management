@@ -1,8 +1,13 @@
+enum Role{
+	EMPLOYEE,
+	MANAGER
+}
+
 public class User {
 	private String userName;
 	private String userPwd;
 	PersonalDetails userDetails; 
-	String userRole;
+	Role userRole;
 	
 	public String getUserName()
 	{
@@ -22,6 +27,15 @@ public class User {
 	public void setUserPwd(String userpwd)
 	{
 		this.userPwd = userpwd;
+	}
+	public String getUserRole()
+	{
+		return this.userRole; 
+	}
+	
+	public void setUserRole(Role userRole)
+	{
+		this.userRole = userRole;
 	}
 	
 	Boolean changePassword(String newpwd)
