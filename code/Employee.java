@@ -79,5 +79,20 @@ public class Employee extends User
     public void setTimeOut(Time timeOut) {
         this.timeOut = timeOut;
     }
-
+    
+    //TODO:
+    public void submitSchedule()
+    {
+        
+    }
+    //TODO:
+    public void exchangeShift()
+    {
+        
+    }
+    //TODO:
+    public void dropShift()
+    {
+        
+    }
 }
