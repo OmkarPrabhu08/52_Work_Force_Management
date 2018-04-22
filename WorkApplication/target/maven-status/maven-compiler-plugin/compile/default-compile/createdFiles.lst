@@ -1,0 +1,7 @@
+workforce\LoginController.class
+workforce\PersonalDetails.class
+workforce\AppInitializer.class
+workforce\Database.class
+workforce\HibernateUtil.class
+workforce\AppConfig.class
+workforce\User.class
