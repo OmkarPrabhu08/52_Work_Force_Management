@@ -1,18 +1,22 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated Apr 22, 2018, 5:32:23 PM by Hibernate Tools 3.5.0.Final -->
+<!-- Generated Apr 22, 2018 4:39:09 PM by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="workforce.User" table="USER">
-        <id name="userId" type="int">
-            <column name="USERID" />
+    <class name="workforce.user" table="user">
+    	 <id name="userId" type="int">
+            <column name="userId" />
             <generator class="assigned" />
         </id>
-        <property name="userName" type="java.lang.String">
-            <column name="USERNAME" />
+        <property name="username" type="java.lang.String">
+            <column name="username" />
+            
         </property>
         <property name="password" type="java.lang.String">
-            <column name="PASSWORD" />
+            <column name="password" />
+        </property>
+        <property name="userrole" type="int">
+            <column name="userrole" />
         </property>
     </class>
 </hibernate-mapping>

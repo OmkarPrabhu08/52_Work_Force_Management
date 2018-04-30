@@ -2,6 +2,7 @@ package workforce;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Date;
 
 import org.hibernate.*;
 import org.hibernate.Session;
@@ -32,7 +33,25 @@ public class Database {
 		{
 			return null;
 		}
-		return ls.get(0);
+		return ls.get(0);		
+	}
+	
+	public PersonalDetails viewProfileFunct(int userId) {
+		Session session = beginSession();
+		String queried = "from PersonalDetails where userId = :userId";
+		Query query = session.createQuery(queried);
+		query.setParameter("userId", userId);
+		
+		List<PersonalDetails> ls1 = (List<PersonalDetails>)query.list();
+		
+		if(ls1==null || ls1.isEmpty())
+		{
+			return null;
+		}
+		return ls1.get(0);
+		
 		
 	}
+	
+	
 }

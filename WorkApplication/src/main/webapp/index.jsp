@@ -7,9 +7,12 @@
 <title>Login</title>
 </head>
 <body>
-	<h1>Welcome to the Login page.</h1>
+	<center>
+	<h1>Work Force Management</h1>
+	<br><br><br><br><br>
+	<h2>Login</h2>
 	<form action="validate" method="post">
-	Login: <input type="text" name="login" value=""/> <br>
+	Username: <input type="text" name="login" value=""/> <br>
 	Password: <input type="password" name="password" value=""/> <br>
 	<input type="submit" value="Submit">
 	</form>		

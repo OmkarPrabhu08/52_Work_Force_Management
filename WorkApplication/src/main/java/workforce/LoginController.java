@@ -23,6 +23,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class LoginController {
 
 	public User user;
+	public PersonalDetails personaldetails;
 	public Database dbConnection = new Database();
 	
 	@GetMapping("/login")
@@ -35,20 +36,29 @@ public class LoginController {
 	public String processCredentials(@RequestParam("login")String userName, @RequestParam("password")String password, Model model) {
 		
 		user = dbConnection.validateLoginUser(userName, password);
-		if(!userName.contains("@workforce.com"))
+		if(user!=null)
 		{
-			model.addAttribute("message", "Username is invalid");
-			return "loginPage";
-		}
-		if(user==null)
-		{
-			user = new User("XYZ", "aasas");
-			return "userHomePage";
+			return "homepage";
 		}
 		else
 		{
 			model.addAttribute("message", "Invalid UserName or Password. Please try again!");
 			return "loginPage";
 		}
+	}
+	
+	@RequestMapping(value="viewprofiles", method = RequestMethod.GET)
+	public String ViewProfiles(Model model) {
+		
+		personaldetails = dbConnection.viewProfileFunct(user.getUserId());
+		
+		
+		model.addAttribute("firstName", personaldetails.getFirstName());
+		model.addAttribute("lastName", personaldetails.getLastName());
+		model.addAttribute("phonenumber", personaldetails.getPhonenumber());
+		model.addAttribute("emailID", personaldetails.getEmailID());
+		model.addAttribute("DOB", personaldetails.getDOB());
+		
+		return "viewProfile";
 	}
 }

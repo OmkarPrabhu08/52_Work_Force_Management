@@ -16,6 +16,6 @@
 	Password: <input type="password" name="password" value=""/> <br>
 	<input type="submit" value="Submit">
 	</form>	
-	</center>	
+	</center>		
 </body>
 </html>
