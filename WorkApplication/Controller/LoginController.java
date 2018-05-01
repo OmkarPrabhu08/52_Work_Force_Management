@@ -106,6 +106,19 @@ public class LoginController {
 		dbConnection.UpdateExchange(exchangeUserId, user.getUserId());
 		return "exchangeShift";
 	}
+	
+	@RequestMapping(value="ClockInTime", method = RequestMethod.POST)
+	public String ClockIn(@RequestParam("timesheetId")int userId, Model model) {
+		
+		timesheet = dbConnection.loadTime(userId);
+		
+		
+		model.addAttribute("ClockIn", timesheet.getClockIn());
+		
+		
+		return "clockin";
+	}
+
 
 	
 }
