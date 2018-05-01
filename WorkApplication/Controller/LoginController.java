@@ -47,6 +47,11 @@ public class LoginController {
 			return "loginPage";
 		}
 	}
+	@RequestMapping(value="clockIn", method = RequestMethod.GET)
+	public String ClockInTime(Model model)
+	{
+		return "clockin";
+	}
 	
 	@RequestMapping(value="viewprofiles", method = RequestMethod.GET)
 	public String ViewProfiles(Model model) {
