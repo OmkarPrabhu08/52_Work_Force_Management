@@ -2,13 +2,10 @@ package workforce;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
-
 import javax.mail.MessagingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
-
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -50,9 +47,7 @@ public class LoginController {
 	@RequestMapping(value="viewprofiles", method = RequestMethod.GET)
 	public String ViewProfiles(Model model) {
 		
-		personaldetails = dbConnection.viewProfileFunct(user.getUserId());
-		
-		
+		personaldetails = dbConnection.viewProfileFunct(user.getUserId());	
 		model.addAttribute("firstName", personaldetails.getFirstName());
 		model.addAttribute("lastName", personaldetails.getLastName());
 		model.addAttribute("phonenumber", personaldetails.getPhonenumber());
