@@ -94,5 +94,28 @@ public class Database {
 		query.executeUpdate();
 		session.close();
 	}
-	
+	public  TimeSheet loadTime(int timesheetId) {
+	        Session session = beginSession();
+	        String queried = "from TimeSheet where timesheetId = :timesheetId";
+	        Query query = session.createQuery(queried);
+	        query.setParameter("timesheetId", timesheetId);
+	        
+	        List<TimeSheet> ls2 = (List<TimeSheet>)query.list();
+	        
+	        if(ls2==null || ls2.isEmpty())
+	        {
+	            return null;
+	        }
+	        return ls2.get(0);
+	        
+	        
+	    }
+
+	       public  void storeTime(TimeSheet timesheet){
+	                Session session =  beginSession();
+	        session.save(timesheet);
+	                session.beginTransaction().commit();
+	        }
+
+	      
 }
